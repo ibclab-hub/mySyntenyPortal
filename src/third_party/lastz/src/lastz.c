@@ -6512,7 +6512,7 @@ static void parse_options_loop
 					}
 				else
 					{
-					if (*scan != '.') goto cant_understand;  scan++;
+					if (*scan != '.') { goto cant_understand;  scan++; }
 					if (scan != scan2) { if (*scan != '.') goto cant_understand;  scan++; }
 					if (scan != scan2) goto cant_understand;
 					}
