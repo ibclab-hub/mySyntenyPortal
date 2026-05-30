@@ -850,8 +850,9 @@ void print_genpaf_align
 				if (strand2 == '-')
 					{
 					fprintf (f, unsposFmt, seq2True + 2 - start2 - len2);
-					break;
+					//break;
 					}
+				break;
 				// (fall thru)
 			case genpafStart2:
 				fprintf (f, unsposFmt, start2);
@@ -860,8 +861,9 @@ void print_genpaf_align
 				if (strand2 == '-')
 					{
 					fprintf (f, unsposFmt, seq2True + 1 - start2 - len2);
-					break;
+					//break;
 					}
+				break;
 				// (fall thru)
 			case genpafStart2Zero:
 				fprintf (f, unsposFmt, start2-1);
@@ -873,8 +875,9 @@ void print_genpaf_align
 				if (strand2 == '-')
 					{
 					fprintf (f, unsposFmt, seq2True + 1 - start2);
-					break;
+					//break;
 					}
+				break;
 				// (fall thru)
 			case genpafEnd2:
 				fprintf (f, unsposFmt, start2+len2-1);
@@ -1501,6 +1504,7 @@ void print_genpaf_match
 			case genpafEnd1Blast:
 				if (strand2 == strand1) fprintf (f, unsposFmt, start1-1 + length);
 				                   else fprintf (f, unsposFmt, start1);
+				break;
 			case genpafLength1:
 				fprintf (f, unsposFmt, length);
 				break;
@@ -1534,8 +1538,9 @@ void print_genpaf_match
 				if (strand2 == '-')
 					{
 					fprintf (f, unsposFmt, seq2True + 2 - (start2+length));
-					break;
+					//break;
 					}
+				break;
 				// (fall thru)
 			case genpafStart2:
 				fprintf (f, unsposFmt, start2);
@@ -1544,8 +1549,9 @@ void print_genpaf_match
 				if (strand2 == '-')
 					{
 					fprintf (f, unsposFmt, seq2True + 1 - (start2+length));
-					break;
+					//break;
 					}
+				break;
 				// (fall thru)
 			case genpafStart2Zero:
 				fprintf (f, unsposFmt, start2-1);
@@ -1557,8 +1563,9 @@ void print_genpaf_match
 				if (strand2 == '-')
 					{
 					fprintf (f, unsposFmt, seq2True + 1 - start2);
-					break;
+					//break;
 					}
+				break;
 				// (fall thru)
 			case genpafEnd2:
 				fprintf (f, unsposFmt, start2-1 + length);
