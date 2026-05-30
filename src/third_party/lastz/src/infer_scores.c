@@ -1188,7 +1188,7 @@ static double infer_gap_scores
 
 	if (avgSeg < 0)
 		suicide ("internal error in infer_gap_scores: average segment doesn't exist");
-	else
+	else {
 		pOpen = 1 / (2*avgSeg);
 		sOpen = (log(pOpen) - log(1-2*pOpen) + log(1-pExtend) - log(pExtend))
 		      * overLog2;
@@ -1203,7 +1203,7 @@ static double infer_gap_scores
 
 		infer_scores_set_stat (pOpen, pOpen);
 		infer_scores_set_stat (sOpen, sOpen);
-
+	}
 	// recompute log odds substitution scores now that we have pOpen, and
 	// rescale them
 
@@ -1414,8 +1414,8 @@ static void write_scores
 		{
 		                   fprintf (f, "\n");
 		                   fprintf (f, "# hsp_threshold    = %s\n", score_thresh_to_string (&params->hspThreshold));
-		if (withGapScores) fprintf (f, "# gapped_threshold = %s\n", score_thresh_to_string (&params->gappedThreshold));
-		                   fprintf (f, "# x_drop           = " scoreFmtSimple "\n", params->xDrop);
+		if (withGapScores) { fprintf (f, "# gapped_threshold = %s\n", score_thresh_to_string (&params->gappedThreshold));
+		                   fprintf (f, "# x_drop           = " scoreFmtSimple "\n", params->xDrop); }
 		if (withGapScores) fprintf (f, "# y_drop           = " scoreFmtSimple "\n", params->yDrop);
 		}
 
