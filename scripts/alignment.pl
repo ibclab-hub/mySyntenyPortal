@@ -104,10 +104,10 @@ while(<F>) {
 	chomp;
 	my ($name, $size) = split(/\s+/);
 	if (-f "$out_dir/tar/$name.fa" && $size < $resolution) {
-		if($size >= $resolution) {
+		#if($size >= $resolution) {
 			`rm -f $out_dir/tar/$name.fa`; 
 			$dcnt++;
-		}
+		#}
 	}
 }
 close(F);
