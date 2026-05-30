@@ -13,7 +13,7 @@ use FindBin '$Bin';
 my $divtime;
 my $out_dir = getcwd;
 my $help;
-my $core = 1;
+my $core = 10;
 my $resolution;
 my $ref_fa;
 my $tar_fa;
